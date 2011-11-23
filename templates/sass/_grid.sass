@@ -1,0 +1,40 @@
+// Grid // (24*24)+(23*16)+16+16 = 976px
+$columns: 24
+$column-width: 24px
+$gutter: 16px
+$width: ($columns * $column-width) + (($columns - 1) * $gutter)
+
+@mixin container
+  width: $width
+  padding:
+    left: $gutter
+    right: $gutter
+  margin:
+    left: auto
+    right: auto
+
+@mixin column
+  display: block
+  float: left
+  &:last-child
+    margin-right: 0
+
+@mixin span($n: 24, $adj: 0)
+  width: ($column-width * $n) + ($gutter * ($n - 1)) + $adj
+  margin-right: $gutter
+
+@mixin padding($left: inherit, $right: inherit)
+  @if $left != inherit
+    padding-left: ($column-width * $left) + ($gutter * $left)
+  @if $right != inherit
+    padding-right: ($column-width * $right) + ($gutter * $right)
+
+@mixin margin($left: inherit, $right: inherit)
+  @if $left != inherit
+    margin-left: ($column-width * $left) + ($gutter * ($left - 1))
+  @if $right != inherit
+    margin-right: ($column-width * $right) + ($gutter * ($right - 1))
+
+@mixin last
+  margin-right: 0
+  clear: right

@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+require File.dirname(__FILE__) + '/../lib/gridpaper'
+
+
+# :name is optional, otherwise uses the basename of this executable
+program :name, 'Gridpaper'
+program :version, Gridpaper::VERSION
+program :description, 'A CSS Framework Built On Top of SASS'
+
+
+command :new do |c|
+  # Describe this command
+  c.syntax = 'gridpaper generate <path>'
+  c.description = 'Creates a new gridpaper project'
+
+  # accept --path as an option
+  # c.option '--path STRING', String, 'Use this root folder to store this project'
+
+  c.action do |args, options|
+    # Use arguments or default if not found
+    path = args[0] || "."
+    # project = args[1] || ask("Enter project name: ")
+
+    # Create a new project
+    puts options.path
+    Gridpaper::Generate.new(path)
+  end
+
+alias_command :g, :generate
+alias_command :new, :generate
+alias_command :setup, :generate
+alias_command :add, :generate
+end
