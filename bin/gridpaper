@@ -9,7 +9,7 @@ program :version, Gridpaper::VERSION
 program :description, 'A CSS Framework Built On Top of SASS'
 
 
-command :new do |c|
+command :generate do |c|
   # Describe this command
   c.syntax = 'gridpaper generate <path>'
   c.description = 'Creates a new gridpaper project'
