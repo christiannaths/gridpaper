@@ -3,45 +3,58 @@ require 'gridpaper/version'
 require 'commander/import'
 require 'fileutils'
 require 'yaml'
+require 'colorize'
 
 module Gridpaper
   class Generate
 
     # Add Gridpaper to your project
-    def initialize(path)
-      templates_path = File.join(File.dirname(__FILE__), '../', 'templates', 'sass', 'gridpaper')
-      destination_path = File.join(path, 'stylesheets', 'sass', 'gridpaper')
+    def initialize(path, stylesheets_dir="stylesheets", syntax=:sass)
 
-      template_files = [
-        '_all.sass',
-        '_forms.sass',
-        '_grid.sass',
-        '_reset.sass'
-      ]
+      destination = File.join(path, stylesheets_dir)
+      copy_files_to(destination, syntax)
 
-
-      # Create the main stylesheets directory
-      if exists?(destination_path)
-        puts "skipped: #{ destination_path } (exists)"
-      else
-        FileUtils.mkdir_p(destination_path)
-        puts "created: #{ destination_path }"
-      end
-
-      # Copy templates to destination directory
-      template_files.each do |file|
-        source_file = File.join(templates_path, file)
-        new_file = File.join(destination_path, file)
-        if exists?(new_file)
-          puts "skipped: #{ new_file } (exists)"
-        else
-          FileUtils.cp_r(new_file, destination_path)
-          puts "created: #{ new_file }"
-        end
-      end
 
     end
 
+    private
+
+    def copy_files_to(destination, syntax)
+      template_dir = File.expand_path(File.join(File.dirname(__FILE__), '../', 'templates', syntax.to_s))
+      template_dir_dest = File.join(destination, syntax.to_s)
+      project_dir = Dir.pwd
+
+      if File.exists?(template_dir_dest)
+        output(template_dir_dest, :skipped)
+      else
+        FileUtils.mkdir_p(template_dir_dest)
+        output(template_dir_dest, :created)
+      end
+
+      Dir.chdir(File.expand_path(template_dir))
+      files = Dir['**/*']
+      Dir.chdir(project_dir)
+
+      files.each do |file|
+        src = File.join(template_dir, file)
+        dest = File.join(template_dir_dest, file)
+
+        if File.exists?(dest)
+          output(dest.to_s, :skipped)
+        else
+          FileUtils.mkdir_p(dest) if File.directory?(src)
+          FileUtils.cp(src, dest) unless File.directory?(src)
+          output(dest.to_s, :created)
+        end
+
+      end
+    end
+
+    def output(message, status)
+      puts "#{ status.to_s }: #{ message }".to_s.green if status == :created
+      puts "#{ status.to_s }: #{ message } (exists)".to_s.yellow if status == :skipped
+      puts "#{ status.to_s }: #{ message }".to_s.red if status == :failed
+    end
   end
 
 end
