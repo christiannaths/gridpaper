@@ -2,8 +2,33 @@
 
 Gridpaper is a simple SASS framework which puts to work some of the nifty features of SASS in a set of pre-build mixins.
 
+== Use
+
+=== Install
+
+  gem install gridpaper
+
+=== Generate
+
+  cd /path/to/project
+  gridpaper generate
+
+=== Options
+
+The <tt>gridpaper</tt> command takes the following options
+  - <tt>--scss</tt> Use SCSS syntax (default is SASS)
+  - <tt>--stylesheets-dir STRING</tt> the name of your stylesheets directory (default is "stylesheets")
+
+== Development
+
+=== Changelog
+
+  - Nov 23, 2011 - Versioned to 0.0.3
+  - Nov 23, 2011 - Basic generator is functional, two syntaxes available: SASS and SCSS
+
 === TODO
 
+  - Flesh out the framework
 
 ---
 
