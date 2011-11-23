@@ -12,7 +12,8 @@ module Gridpaper
     def initialize(path, stylesheets_dir="stylesheets", syntax=:sass)
 
       destination = File.join(path, stylesheets_dir)
-      copy_files_to(destination, syntax)
+      puts stylesheets_dir.cyan
+      copy_files_to(destination, syntax.to_s)
 
 
     end
@@ -21,7 +22,7 @@ module Gridpaper
 
     def copy_files_to(destination, syntax)
       template_dir = File.expand_path(File.join(File.dirname(__FILE__), '../', 'templates', syntax.to_s))
-      template_dir_dest = File.join(destination, syntax.to_s)
+      template_dir_dest = File.join(destination, syntax)
       project_dir = Dir.pwd
 
       if File.exists?(template_dir_dest)

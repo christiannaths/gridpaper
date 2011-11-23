@@ -15,16 +15,16 @@ command :generate do |c|
   c.description = 'Creates a new gridpaper project'
 
   # accept --path as an option
-  # c.option '--path STRING', String, 'Use this root folder to store this project'
+  c.option '--scss', 'Use the alternate SCSS sytnax'
+  c.option '--stylesheets-dir STRING', String, 'Use a different directory to hold your stylesheets'
 
   c.action do |args, options|
-    # Use arguments or default if not found
     path = args[0] || "."
-    # project = args[1] || ask("Enter project name: ")
+    options.scss ? syntax = :scss : syntax = :sass
+    stylesheets_dir = options.stylesheets_dir || "stylesheets"
+    puts stylesheets_dir
 
-    # Create a new project
-    puts options.path
-    Gridpaper::Generate.new(path)
+    Gridpaper::Generate.new(path, stylesheets_dir, syntax)
   end
 
 alias_command :g, :generate

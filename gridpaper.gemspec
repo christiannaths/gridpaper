@@ -20,4 +20,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency("commander", '>= 4.0.4')
   s.add_dependency("sass", '>=3.1.7')
+  s.add_dependency("colorize", '>= 0.5.8')
 end
