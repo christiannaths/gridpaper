@@ -31,8 +31,11 @@ module Gridpaper
         output(template_dir_dest, :created)
       end
 
+      # Get a listing of all files and folders in the
+      # templates directory for the specified syntax
       Dir.chdir(File.expand_path(template_dir))
       files = Dir['**/*']
+      puts files
       Dir.chdir(project_dir)
 
       files.each do |file|
