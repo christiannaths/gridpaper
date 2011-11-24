@@ -101,6 +101,18 @@ h4 {
 h5, h6 {
   font-size: 1em; }
 
+/* line 93, ../../templates/sass/gridpaper/_reset.sass */
+.clear {
+  display: block; }
+  /* line 85, ../../templates/sass/gridpaper/_reset.sass */
+  .clear:after {
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: "\0020"; }
+
 /* Default Gridpaper 24 Column Grid
  * Column Width: 24px
  * Gutter Width: 16px
@@ -134,7 +146,15 @@ body {
   -moz-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
   -ms-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
   -o-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2); }
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  background-color: #cccccc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#aaaaaa));
+  background-image: -webkit-linear-gradient(top, #eeeeee, #aaaaaa);
+  background-image: -moz-linear-gradient(top, #eeeeee, #aaaaaa);
+  background-image: -ms-linear-gradient(top, #eeeeee, #aaaaaa);
+  background-image: -o-linear-gradient(top, #eeeeee, #aaaaaa);
+  background-image: linear-gradient(top, #eeeeee, #aaaaaa);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="#eeeeee", EndColorStr="#aaaaaa"); }
   /* line 23, ../../templates/sass/gridpaper/_grid.sass */
   .box:last-child {
     margin-right: 0; }
