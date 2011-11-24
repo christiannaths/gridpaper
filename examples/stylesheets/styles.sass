@@ -1,16 +1,37 @@
 @import settings
 @import ../../templates/sass/gridpaper/all
 
+@import columns
+
 body
   @include container
+  color: #333
+
+p
+  line-height: 1.5em
+  margin-bottom: 1.5em
+  &:last-child
+    margin-bottom: 0
+
+section, header, footer
+  overflow: hidden
+  margin-bottom: 1.5em
+  padding-bottom: 1.5em
 
 .box
   @include column
-  @include span(4, (-2px - 32px))
+  @include span(4)
+
+.fake-button
   @include border-radius(0px 30px, true)
-  height: 200px
-  padding: 16px
-  border: 1px solid #fff
-  background-color: #eee
   @include box-shadow(4px 4px 4px rgba(0,0,0,0.2))
   @include box-gradient(#eee, #aaa)
+
+section h4:first-child
+  margin-bottom: 0.5em
+  padding: 0.25em 0.5em
+  color: #fff
+  background: #333
+
+
+

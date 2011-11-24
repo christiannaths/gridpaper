@@ -14,7 +14,8 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote,
   font: {
     size: 100%;
     weight: normal;
-    style: normal; };
+    style: normal;
+    family: sans-serif; };
   vertical-align: baseline;
   background: transparent;
   line-height: 1; }
@@ -80,12 +81,15 @@ h2 {
   font-size: 4em; }
 
 h3 {
-  font-size: 3; }
+  font-size: 3em; }
 
 h4 {
   font-size: 2em; }
 
-h5, h6 {
+h5 {
+  font-size: 1.5em; }
+
+h6 {
   font-size: 1em; }
 
 @mixin clearfix {

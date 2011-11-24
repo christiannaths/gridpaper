@@ -1,0 +1,51 @@
+#columns-example
+  .row
+    overflow: hidden
+
+    .grid-column
+      min-height: 15em
+      margin: 0.5em 0
+      @include showgrid
+      background-color: #f1f1f1
+
+
+  #two-columns
+    div
+      @include column
+      @include span(12, -1px)
+
+  #three-columns
+    div
+      @include column
+      @include span(8, -1px)
+
+  #four-columns
+    div
+      @include column
+      @include span(6, -1px)
+
+  #six-columns
+    div
+      @include column
+      @include span(4, -1px)
+
+  #eight-columns
+    div
+      @include column
+      @include span(3, -1px)
+
+
+#text-columns-example
+
+  .text-columns
+    @include showgrid
+    margin-bottom: 1.5em
+
+  #two-text-columns
+    @include text-columns(2)
+
+  #three-text-columns
+    @include text-columns(3)
+
+  #four-text-columns
+    @include text-columns(4)

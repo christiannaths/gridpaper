@@ -41,3 +41,17 @@ $grid-gutter-width: 16px !default;
 @mixin last {
   margin-right: 0;
   clear: right; }
+
+@mixin text-columns($n, $gutter: $grid-gutter-width) {
+  -webkit-column-count: $n;
+  -moz-column-count: $n;
+  column-count: $n;
+  -webkit-column-gap: $gutter;
+  -moz-column-gap: $gutter;
+  column-gap: $gutter; }
+
+@mixin showgrid {
+  background: url(../images/grid.png);
+  border: {
+    top: 1px solid fade-out(#dd7d96, 0.7);
+    right: 1px solid fade-out(#7dcadd, 0.3); }; }
