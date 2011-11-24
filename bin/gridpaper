@@ -14,7 +14,7 @@ command :generate do |c|
   c.syntax = 'gridpaper generate <path>'
   c.description = 'Creates a new gridpaper project'
 
-  # accept --path as an option
+  # options
   c.option '--scss', 'Use the alternate SCSS sytnax'
   c.option '--stylesheets-dir STRING', String, 'Use a different directory to hold your stylesheets'
 
@@ -26,6 +26,27 @@ command :generate do |c|
 
     Gridpaper::Generate.new(path, stylesheets_dir, syntax)
   end
+
+command :watch do |c|
+  c.syntax = 'gridpaper watch <input> <output>'
+  c.description = 'Watches for changes in your input file and generates CSS to your output file.'
+
+  c.option '--stylesheets-dir STRING', String, 'Use a different directory to hold your stylesheets'
+
+  c.action do |args, options|
+    stylesheets_dir = options.stylesheets_dir || "stylesheets"
+
+    input_file = args[0] || "styles.sass"
+    output_file = args[1] || "styles.css"
+
+    syntax = File.extname(input_file).gsub('.', "") || "sass"
+    input_path = "./#{ stylesheets_dir }/#{ syntax }/#{ input_file }"
+    output_path = "./#{ stylesheets_dir }/#{ File.basename(output_file) }.css"
+
+    `sass --watch #{ input_path }:#{ output_path }`
+  end
+
+end
 
 alias_command :g, :generate
 alias_command :new, :generate

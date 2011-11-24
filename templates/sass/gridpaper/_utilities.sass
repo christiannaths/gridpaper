@@ -1,0 +1,6 @@
+@mixin sprite($url, $height: 100, $width: 100, $x: 0, $y: 0)
+  display: block
+  height: $height
+  width: $width
+  background: url($url)
+  background-position: ($x * $width) ($y * $height)
