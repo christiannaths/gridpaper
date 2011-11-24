@@ -4,6 +4,9 @@
   -ms-border-radius: $radii;
   -o-border-radius: $radii;
   border-radius: $radii;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
   @if $ie {
     position: relative;
     behavior: url(/javascripts/PIE.htc); } }

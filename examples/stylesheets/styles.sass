@@ -1,12 +1,9 @@
 @import ../../templates/sass/gridpaper/all
-
-// Define your own grid
-$grid-columns: 12
-$grid-column-width: 40px
-$grid-gutter-width: 20px
+@import settings
 
 body
   @include container
+  font-size: $base-font-size
 
 .box
   @include column

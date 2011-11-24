@@ -4,7 +4,9 @@
   -ms-border-radius: $radii
   -o-border-radius: $radii
   border-radius: $radii
-
+  -moz-background-clip: padding
+  -webkit-background-clip: padding-box
+  background-clip: padding-box
   @if $ie
     position: relative
     behavior: url(/javascripts/PIE.htc)
@@ -15,10 +17,8 @@
   -ms-box-shadow: $style
   -o-box-shadow: $style
   box-shadow: $style
-
   @if $ie
     behavior: url(/javascripts/PIE.htc)
-
 
 @mixin box-gradient($from, $to)
   background-color: mix($from, $to)
@@ -29,4 +29,3 @@
   background-image: -o-linear-gradient(top, $from, $to)
   background-image: linear-gradient(top, $from, $to)
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="#{ $from }", EndColorStr="#{ $to }")
-

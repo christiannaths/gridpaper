@@ -83,19 +83,19 @@ textarea {
 
 /* line 72, ../../templates/sass/gridpaper/_reset.sass */
 h1 {
-  font-size: 3em; }
+  font-size: 4em; }
 
 /* line 74, ../../templates/sass/gridpaper/_reset.sass */
 h2 {
-  font-size: 2.5em; }
+  font-size: 3.25em; }
 
 /* line 76, ../../templates/sass/gridpaper/_reset.sass */
 h3 {
-  font-size: 2em; }
+  font-size: 2.5em; }
 
 /* line 78, ../../templates/sass/gridpaper/_reset.sass */
 h4 {
-  font-size: 1.5em; }
+  font-size: 1.75em; }
 
 /* line 80, ../../templates/sass/gridpaper/_reset.sass */
 h5, h6 {
@@ -117,15 +117,16 @@ h5, h6 {
  * Column Width: 24px
  * Gutter Width: 16px
  * Total Width: 976px */
-/* line 8, styles.sass */
+/* line 4, styles.sass */
 body {
   width: 700px;
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  font-size: 16px; }
 
-/* line 11, styles.sass */
+/* line 8, styles.sass */
 .box {
   display: block;
   float: left;
@@ -136,6 +137,9 @@ body {
   -ms-border-radius: 0px 30px;
   -o-border-radius: 0px 30px;
   border-radius: 0px 30px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
   position: relative;
   behavior: url(/javascripts/PIE.htc);
   height: 200px;
