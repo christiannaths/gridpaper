@@ -1,3 +1,10 @@
-guard 'sass', :output => 'stylesheets' do
+require 'gridpaper'
+
+
+
+input = Gridpaper::Watch::DIR
+output = Gridpaper::Watch::DIR
+
+guard 'gridpaper-watch', :input => input, :output => output do
   watch %r{^(.+\.s[ac]ss)/(.+\.s[ac]ss)$}
 end

@@ -64,21 +64,22 @@ module Gridpaper
   end
 
   class Watch
+    DIR = Dir.pwd
+
 
     def initialize(input, output="stylesheets")
       working_dir = Dir.pwd
-      puts Dir.pwd
-      Dir.chdir(
-        File.expand_path(
-          File.join(File.dirname(__FILE__), 'Guardfile')
-        )
-      )
+
+      guardfile = File.expand_path(File.join(File.dirname(__FILE__), 'Guardfile'))
+      puts guardfile.yellow
+
       Guard.setup
-      Guard::Dsl.evaluate_guardfile(:guardfile => File.join(File.dirname(__FILE__), 'Guardfile'))
+      Guard::Dsl.evaluate_guardfile(:guardfile => guardfile)
+
       Guard.start
-      puts Dir.pwd
-      Dir.chrdir(working_dir)
-      puts Dir.pwd
+
+
+
     end
 
   end
