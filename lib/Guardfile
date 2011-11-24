@@ -1,0 +1,3 @@
+guard 'sass', :output => 'stylesheets' do
+  watch %r{^(.+\.s[ac]ss)/(.+\.s[ac]ss)$}
+end

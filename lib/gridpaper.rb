@@ -4,6 +4,8 @@ require 'commander/import'
 require 'fileutils'
 require 'yaml'
 require 'colorize'
+require 'guard'
+# require 'guard-sass'
 
 module Gridpaper
   class Generate
@@ -59,6 +61,26 @@ module Gridpaper
       puts "#{ status.to_s }: #{ message } (exists)".to_s.yellow if status == :skipped
       puts "#{ status.to_s }: #{ message }".to_s.red if status == :failed
     end
+  end
+
+  class Watch
+
+    def initialize(input, output="stylesheets")
+      working_dir = Dir.pwd
+      puts Dir.pwd
+      Dir.chdir(
+        File.expand_path(
+          File.join(File.dirname(__FILE__), 'Guardfile')
+        )
+      )
+      Guard.setup
+      Guard::Dsl.evaluate_guardfile(:guardfile => File.join(File.dirname(__FILE__), 'Guardfile'))
+      Guard.start
+      puts Dir.pwd
+      Dir.chrdir(working_dir)
+      puts Dir.pwd
+    end
+
   end
 
 end
