@@ -1,0 +1,140 @@
+/* html5doctor.com Reset Stylesheet
+ * v1.6.1
+ * Last Updated: 2010-09-17
+ * Author: Richard Clark - http: //richclarkdesign.com
+ * Twitter: @rich_clark */
+/* line 8, ../../templates/sass/gridpaper/_reset.sass */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+  vertical-align: baseline;
+  background: transparent;
+  line-height: 1; }
+
+/* line 21, ../../templates/sass/gridpaper/_reset.sass */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/* line 24, ../../templates/sass/gridpaper/_reset.sass */
+h1, h2, h3, h4, h5, h6, strong, b {
+  font-weight: bold; }
+
+/* line 27, ../../templates/sass/gridpaper/_reset.sass */
+em, i {
+  font-style: italic; }
+
+/* line 30, ../../templates/sass/gridpaper/_reset.sass */
+nav ul {
+  list-style: none; }
+
+/* line 33, ../../templates/sass/gridpaper/_reset.sass */
+blockquote, q {
+  quotes: none; }
+
+/* line 36, ../../templates/sass/gridpaper/_reset.sass */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none; }
+
+/* line 40, ../../templates/sass/gridpaper/_reset.sass */
+ins {
+  text-decoration: none; }
+
+/* line 43, ../../templates/sass/gridpaper/_reset.sass */
+mark {
+  font-style: italic;
+  font-weight: bold; }
+
+/* line 47, ../../templates/sass/gridpaper/_reset.sass */
+del {
+  text-decoration: line-through; }
+
+/* line 50, ../../templates/sass/gridpaper/_reset.sass */
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+/* line 54, ../../templates/sass/gridpaper/_reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 58, ../../templates/sass/gridpaper/_reset.sass */
+hr {
+  display: block;
+  height: 0px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 0;
+  padding: 0; }
+
+/* line 66, ../../templates/sass/gridpaper/_reset.sass */
+input, select {
+  vertical-align: middle; }
+
+/* line 69, ../../templates/sass/gridpaper/_reset.sass */
+textarea {
+  margin: 0; }
+
+/* line 72, ../../templates/sass/gridpaper/_reset.sass */
+h1 {
+  font-size: 3em; }
+
+/* line 74, ../../templates/sass/gridpaper/_reset.sass */
+h2 {
+  font-size: 2.5em; }
+
+/* line 76, ../../templates/sass/gridpaper/_reset.sass */
+h3 {
+  font-size: 2em; }
+
+/* line 78, ../../templates/sass/gridpaper/_reset.sass */
+h4 {
+  font-size: 1.5em; }
+
+/* line 80, ../../templates/sass/gridpaper/_reset.sass */
+h5, h6 {
+  font-size: 1em; }
+
+/* Default Gridpaper 24 Column Grid
+ * Column Width: 24px
+ * Gutter Width: 16px
+ * Total Width: 976px */
+/* line 8, styles.sass */
+body {
+  width: 700px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* line 11, styles.sass */
+.box {
+  display: block;
+  float: left;
+  width: 186px;
+  margin-right: 20px;
+  -webkit-border-radius: 0px 30px;
+  -moz-border-radius: 0px 30px;
+  -ms-border-radius: 0px 30px;
+  -o-border-radius: 0px 30px;
+  border-radius: 0px 30px;
+  position: relative;
+  behavior: url(/javascripts/PIE.htc);
+  height: 200px;
+  padding: 16px;
+  border: 1px solid white;
+  background-color: #eeeeee;
+  -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2); }
+  /* line 23, ../../templates/sass/gridpaper/_grid.sass */
+  .box:last-child {
+    margin-right: 0; }

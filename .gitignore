@@ -3,3 +3,7 @@
 Gemfile.lock
 pkg/*
 .DS_Store
+*.sassc
+*.scssc
+.sass-cache
+.scss-cache

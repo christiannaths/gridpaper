@@ -1,14 +1,17 @@
-// Grid // (24*24)+(23*16)+16+16 = 976px
-$columns: 24;
-$column-width: 24px;
-$gutter: 16px;
-$width: $columns * $column-width + ($columns - 1) * $gutter;
+/* Default Gridpaper 24 Column Grid
+ * Column Width: 24px
+ * Gutter Width: 16px
+ * Total Width: 976px */
+
+$grid-columns: 24 !default;
+$grid-column-width: 24px !default;
+$grid-gutter-width: 16px !default;
 
 @mixin container {
-  width: $width;
+  width: $grid-columns * $grid-column-width + ($grid-columns - 1) * $grid-gutter-width;
   padding: {
-    left: $gutter;
-    right: $gutter; };
+    left: $grid-gutter-width;
+    right: $grid-gutter-width; };
   margin: {
     left: auto;
     right: auto; }; }
@@ -19,21 +22,21 @@ $width: $columns * $column-width + ($columns - 1) * $gutter;
   &:last-child {
     margin-right: 0; } }
 
-@mixin span($n: 24, $adj: 0) {
-  width: $column-width * $n + $gutter * ($n - 1) + $adj;
-  margin-right: $gutter; }
+@mixin span($n: $grid-columns, $adj: 0) {
+  width: $grid-column-width * $n + $grid-gutter-width * ($n - 1) + $adj;
+  margin-right: $grid-gutter-width; }
 
 @mixin padding($left: inherit, $right: inherit) {
   @if $left != inherit {
-    padding-left: $column-width * $left + $gutter * $left; }
+    padding-left: $grid-column-width * $left + $grid-gutter-width * $left; }
   @if $right != inherit {
-    padding-right: $column-width * $right + $gutter * $right; } }
+    padding-right: $grid-column-width * $right + $grid-gutter-width * $right; } }
 
 @mixin margin($left: inherit, $right: inherit) {
   @if $left != inherit {
-    margin-left: $column-width * $left + $gutter * ($left - 1); }
+    margin-left: $grid-column-width * $left + $grid-gutter-width * ($left - 1); }
   @if $right != inherit {
-    margin-right: $column-width * $right + $gutter * ($right - 1); } }
+    margin-right: $grid-column-width * $right + $grid-gutter-width * ($right - 1); } }
 
 @mixin last {
   margin-right: 0;

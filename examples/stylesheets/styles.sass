@@ -1,0 +1,19 @@
+@import ../../templates/sass/gridpaper/all
+
+// Define your own grid
+$grid-columns: 12
+$grid-column-width: 40px
+$grid-gutter-width: 20px
+
+body
+  @include container
+
+.box
+  @include column
+  @include span(4, (-2px - 32px))
+  @include border-radius(0px 30px, true)
+  height: 200px
+  padding: 16px
+  border: 1px solid #fff
+  background-color: #eee
+  @include box-shadow(4px 4px 4px rgba(0,0,0,0.2))

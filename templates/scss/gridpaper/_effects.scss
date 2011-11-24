@@ -1,0 +1,18 @@
+@mixin border-radius($radii, $ie: false) {
+  -webkit-border-radius: $radii;
+  -moz-border-radius: $radii;
+  -ms-border-radius: $radii;
+  -o-border-radius: $radii;
+  border-radius: $radii;
+  @if $ie {
+    position: relative;
+    behavior: url(/javascripts/PIE.htc); } }
+
+@mixin box-shadow($style, $ie: false) {
+  -webkit-box-shadow: $style;
+  -moz-box-shadow: $style;
+  -ms-box-shadow: $style;
+  -o-box-shadow: $style;
+  box-shadow: $style;
+  @if $ie {
+    behavior: url(/javascripts/PIE.htc); } }
