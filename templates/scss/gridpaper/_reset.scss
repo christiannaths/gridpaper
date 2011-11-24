@@ -82,3 +82,16 @@ h4 {
 
 h5, h6 {
   font-size: 1em; }
+
+@mixin clearfix {
+  display: block;
+  &:after {
+    display:block {}
+    overflow: hidden;
+    visibility: hidden;
+    clear:both {}
+    height:0 {}
+    content: "\0020"; } }
+
+.clear {
+  @include clearfix; }
