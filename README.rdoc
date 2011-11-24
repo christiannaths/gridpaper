@@ -33,6 +33,7 @@ The <tt>gridpaper</tt> command takes the following options
 
 === Changelog
 
+- Nov 23, 2011 - Versioned to 0.0.4
 - Nov 23, 2011 - Versioned to 0.0.3
 - Nov 23, 2011 - Basic generator is functional, two syntaxes available: SASS and SCSS
 
