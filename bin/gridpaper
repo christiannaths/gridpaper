@@ -39,9 +39,9 @@ command :watch do |c|
     stylesheets_dir = options.stylesheets_dir || "stylesheets"
     # working_path = Dir.pwd
 
-    input_path = args[0] || "stylesheets/sass"
+    input_path = args[0] || ""
     # input_path = File.expand_path File.join(working_path, input_path)
-    output_path = args[1] || "../stylesheets"
+    output_path = args[1] || ""
     # output_path = File.expand_path File.join(working_path, output_path)
 
     Gridpaper::Watch.new(input_path, output_path)
