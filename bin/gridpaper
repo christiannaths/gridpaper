@@ -40,6 +40,7 @@ command :watch do |c|
     # Pass to sass --watch
     # TODO:
     #   - Hook into this and load custom SASS functions
+    #   - Pass along other sass -- watch options
     system("sass --watch #{ input_path }:#{ output_path }")
   end
 
