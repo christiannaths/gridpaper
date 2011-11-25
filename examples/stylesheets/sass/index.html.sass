@@ -1,9 +1,19 @@
 @import settings
 @import gridpaper/all
 
+html
+  background: $light-grey
+
 body
   @include container
   color: $dark-grey
+  background: $white
+
+header
+  padding: 3em 0
+  h1
+    text-transform: uppercase
+    letter-spacing: -0.08em
 
 section, header, footer
   overflow: hidden
@@ -16,14 +26,29 @@ section h4:first-child
   color: $white
   background: $dark-grey
 
+pre
+  background: $silver
+  code
+    font-family: monospace
+
 
 // CSS3 Effects
-.effects-box
-  @include column
-  @include span(8, -2px)
-  height: 10em
-  border: 1px solid #fff
-  background-color: $light-grey
+
+.effects-example
+  overflow: hidden
+  padding: 16px 0
+
+  .effects-box
+    @include column
+    @include span(8, -2px)
+    height: 10em
+    border: 1px solid #fff
+    background-color: $light-grey
+
+  pre
+    @include column
+    @include span(16)
+    height: 10em
 
 #border-radius
   @include border-radius(10px)
@@ -82,31 +107,13 @@ section h4:first-child
 #four-text-columns
   @include text-columns(4)
 
+#columns-example, #text-columns-example
+  .row
+    overflow: hidden
+
 // Forms
-form
-  legend
-    @include column
-    @include span(8)
 
-  .fields
-    @include column
-    @include span(16)
-    @include last
-    margin-bottom: 0.5em
-    background-color: $silver
-
-  .actions
-    @extend .fields
-    background-color: transparent
-
-  .field
-    margin: 0.5em 0
-
-
-    label
-      @include span(4)
-
-    input[type="text"], input[type="email"], input[type="url"], input[type="search"], textarea
-      padding: 7px
-      border: 1px solid #7E7E7E
-      @include span(11)
+// Tables
+table
+  @include column
+  @include table-span(12)

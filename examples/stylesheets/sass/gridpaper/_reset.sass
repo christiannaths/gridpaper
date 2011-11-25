@@ -5,7 +5,7 @@
   Author: Richard Clark - http: //richclarkdesign.com
   Twitter: @rich_clark
 
-$base-font-size: 16px !default
+
 
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video
   margin: 0
@@ -20,12 +20,6 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote,
   vertical-align: baseline
   background: transparent
   line-height: 1
-
-body
-  font-size: $base-font-size
-
-p
-  line-height: 1.5
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
   display: block
@@ -68,7 +62,7 @@ hr
   display: block
   height: 0px
   border: 0
-  border-top: 1px solid #cccccc
+  border-top: 1px solid
   margin: 0
   padding: 0
 
@@ -77,19 +71,6 @@ input, select, button
 
 textarea
   margin: 0
-
-h1
-  font-size: 5em
-h2
-  font-size: 4em
-h3
-  font-size: 3em
-h4
-  font-size: 2em
-h5
-  font-size: 1.5em
-h6
-  font-size: 1em
 
 @mixin clearfix
   display: block
@@ -103,3 +84,39 @@ h6
 
 .clear
   @include clearfix
+
+
+form
+
+  .field
+    overflow: hidden
+
+  label
+    display: block
+    float: left
+    text-align: right
+    margin-right: 1em
+    width: 6em
+
+
+  input[type="text"], input[type="email"], input[type="url"], input[type="search"], textarea, select, input[type="submit"], button
+    font:
+      size: 0.85em
+      family: sans-serif
+
+  input[type="text"], input[type="email"], input[type="url"], input[type="search"], textarea
+    padding: 0.25em 0.5em
+    border: 1px solid
+
+  input[type="submit"], button
+    padding: 0.75em 1em
+    cursor: pointer
+    border: 1px solid
+
+table
+  border: none
+
+  th, td
+    text-align: left
+    border: 1px solid
+
