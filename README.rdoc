@@ -19,7 +19,7 @@ The <tt>gridpaper generate</tt> command is also aliased to:
   gridpaper setup
   gridpaper add
 
-=== Options
+==== Options
 
 The <tt>gridpaper</tt> command takes the following options
 
@@ -28,6 +28,21 @@ The <tt>gridpaper</tt> command takes the following options
 
   --stylesheets-dir STRING
   # the name of your stylesheets directory (default is "stylesheets")
+
+=== Watch
+
+Watch your project folder for changes to the sass or scss files and convert them to css with
+  gridpaper watch
+
+==== Arguments
+
+The <tt>gridpaper watch <input folder> <output folder></tt> command takes the following arguments
+
+  <input folder>
+  # A relative path to the folder containing your SASS files. Defaults to "stylesheets/sass"
+
+  <output folder>
+  # A relative path to the folder where your CSS files will be created. Defaults to "stylesheets"
 
 == Development
 

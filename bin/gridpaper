@@ -30,7 +30,7 @@ command :generate do |c|
 end
 
 command :watch do |c|
-  c.syntax = 'gridpaper watch [input/directory] [output/directory]'
+  c.syntax = 'gridpaper watch <input folder> <output folder>'
   c.description = 'Watches for changes in your input file and generates CSS to your output file.'
 
   c.action do |args, options|
