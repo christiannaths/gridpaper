@@ -7,4 +7,4 @@ pkg/*
 *.scssc
 .sass-cache
 .scss-cache
-.css
+**.css

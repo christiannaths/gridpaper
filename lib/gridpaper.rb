@@ -71,14 +71,7 @@ module Gridpaper
       @@output_path = output
       @@input_path = input
 
-      guardfile = File.expand_path(File.join(File.dirname(__FILE__), 'Guardfile'))
-      # puts guardfile.cyan
-
-      # Guard.setup
-      # Guard::Dsl.evaluate_guardfile(:guardfile => guardfile)
-      # Guard::Dsl.local_guardfile_path(guardfile)
-      # puts Guard::Dsl.guardfile_path.cyan
-
+      guardfile = File.expand_path(File.join(File.dirname(__FILE__), '/guard/Guardfile'))
       Guard.start(:guardfile => guardfile, :watchdir => input)
     end
 

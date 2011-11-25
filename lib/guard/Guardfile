@@ -95,7 +95,7 @@ module ::Guard
         begin
           contents = build_sass(file)
           if contents
-            message = options[:noop] ? "verified #{file}" : "rebuilt #{file}"
+            message = options[:noop] ? "verified #{file}" : "rebuilt #{file}".yellow
 
             File.open(css_file, 'w') {|f| f.write(contents) } unless options[:noop]
             ::Guard::UI.info "-> #{message}", :reset => true
@@ -127,21 +127,7 @@ module ::Guard
   end
 end
 
-
-
-# input = File.join(Gridpaper::Watch::DIR, 'stylesheets')
-# output = File.join(Gridpaper::Watch::DIR, 'stylesheets')
-puts "#{ Gridpaper::Watch.input_path } => #{ Gridpaper::Watch.output_path }".light_red
-
 guard 'gridpaper-sass', :input => Gridpaper::Watch.input_path, :output => Gridpaper::Watch.output_path do
   # watch %r{^(s[ac]ss)/(.+\.s[ac]ss)$}
   watch %r{^(.+\.s[ac]ss)$}
 end
-
-# guard 'sass',
-#   :input => Gridpaper::Watch.input_path,
-#   :output => Gridpaper::Watch.output_path,
-#   :style => :compact,
-#   :debug_info_ => true do
-#   watch %r{^(.+\.s[ac]ss)$}
-# end
