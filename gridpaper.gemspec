@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "gridpaper/version"
 
 Gem::Specification.new do |s|
-  s.name        = "Gridpaper"
+  s.name        = "gridpaper"
   s.version     = Gridpaper::VERSION
   s.authors     = ["Christian Naths"]
   s.email       = ["christiannaths@gmail.com"]

@@ -33,29 +33,24 @@ command :watch do |c|
   c.syntax = 'gridpaper watch'
   c.description = 'Watches for changes in your input file and generates CSS to your output file.'
 
-  c.option '--stylesheets-dir STRING', String, 'Use a different directory to hold your stylesheets'
+  # c.option '--stylesheets-dir STRING', String, 'Use a different directory to hold your stylesheets'
 
   c.action do |args, options|
     stylesheets_dir = options.stylesheets_dir || "stylesheets"
+    # working_path = Dir.pwd
 
-    # input_file = args[0] || "styles.sass"
-    # output_file = args[1] || "styles.css"
+    input_path = args[0] || "stylesheets/sass"
+    # input_path = File.expand_path File.join(working_path, input_path)
+    output_path = args[1] || "../stylesheets"
+    # output_path = File.expand_path File.join(working_path, output_path)
 
-    # syntax = File.extname(input_file).gsub('.', "") || "sass"
-    output_path = "./#{ stylesheets_dir }"
-
-    # `sass --watch #{ input_path(stylesheets_dir) }:#{ output_path }`
-    Gridpaper::Watch.new(input_path(stylesheets_dir), stylesheets_dir)
+    Gridpaper::Watch.new(input_path, output_path)
   end
 
 end
 
-def input_path(stylesheets_dir)
-  if File.exists?("./#{ stylesheets_dir }/sass")
-    return "./#{ stylesheets_dir }/sass"
-  elsif File.exists?("./#{ stylesheets_dir }/scss")
-    return "./#{ stylesheets_dir }/scss"
-  else
+def check_input_path(working_path)
+  unless File.exists?(File.join(working_path, 'sass')) || File.exists?(File.join(working_path, 'scss'))
     puts "Could not find a directory named './#{ stylesheets_dir }/sass' or './#{ stylesheets_dir }/scss'. Aborting.".red
     return false
   end
