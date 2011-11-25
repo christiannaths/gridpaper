@@ -1,7 +1,7 @@
 form
 
   .field
-    margin-bottom: 1em
+    padding: 0.5em 0
 
   legend
     display: block
@@ -9,19 +9,24 @@ form
 
   label
     display: block
+    float: left
+    text-align: right
+    margin-right: 1em
+    width: 5em
+
+
+  input[type="text"], input[type="email"], input[type="url"], input[type="search"], textarea, select, input[type="submit"], button
+    font:
+      size: 0.85em
+      family: sans-serif
 
   input[type="text"], input[type="email"], input[type="url"], input[type="search"], textarea
     padding: 0.25em 0.5em
-    font:
-      size: 1em
-      family: sans-serif
     border: 1px solid #7E7E7E
+    width: 100%
 
-  input[type="submit"]
+  input[type="submit"], button
     padding: 0.5em 1em
-    border: 1px solid #7E7E7E
-    @include border-radius(5px)
     cursor: pointer
-
-
+    border: 1px solid #777
 

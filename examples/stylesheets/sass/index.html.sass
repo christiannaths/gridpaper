@@ -1,0 +1,112 @@
+@import settings
+@import gridpaper/all
+
+body
+  @include container
+  color: $dark-grey
+
+section, header, footer
+  overflow: hidden
+  margin-bottom: 1.5em
+  padding-bottom: 1.5em
+
+section h4:first-child
+  margin-bottom: 0.5em
+  padding: 0.25em 0.5em
+  color: $white
+  background: $dark-grey
+
+
+// CSS3 Effects
+.effects-box
+  @include column
+  @include span(8, -2px)
+  height: 10em
+  border: 1px solid #fff
+  background-color: $light-grey
+
+#border-radius
+  @include border-radius(10px)
+
+#box-shadow
+  @include box-shadow(4px 4px 4px fade-out(#000, 0.75))
+
+#linear-gradient
+  @include linear-gradient(#ccc, #777)
+
+
+// Columns
+.grid-column
+  height: 6em
+  margin-bottom: 1em
+  border: none
+    top: 1px solid #E4C1CB
+    right: 1px solid #98CFDE
+  background: $silver url(../images/grid.png)
+
+#two-columns
+  .grid-column
+    @include column
+    @include span(12, -2px)
+
+#three-columns
+  .grid-column
+    @include column
+    @include span(8, -2px)
+
+#four-columns
+  .grid-column
+    @include column
+    @include span(6, -2px)
+
+#six-columns
+  .grid-column
+    @include column
+    @include span(4, -2px)
+
+#eight-columns
+  .grid-column
+    @include column
+    @include span(3, -2px)
+
+.text-columns
+  margin-bottom: 1.5em
+  @include showgrid
+
+#two-text-columns
+  @include text-columns(2)
+
+#three-text-columns
+  @include text-columns(3)
+
+#four-text-columns
+  @include text-columns(4)
+
+// Forms
+form
+  legend
+    @include column
+    @include span(8)
+
+  .fields
+    @include column
+    @include span(16)
+    @include last
+    margin-bottom: 0.5em
+    background-color: $silver
+
+  .actions
+    @extend .fields
+    background-color: transparent
+
+  .field
+    margin: 0.5em 0
+
+
+    label
+      @include span(4)
+
+    input[type="text"], input[type="email"], input[type="url"], input[type="search"], textarea
+      padding: 7px
+      border: 1px solid #7E7E7E
+      @include span(11)

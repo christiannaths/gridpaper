@@ -20,7 +20,7 @@
   @if $ie
     behavior: url(/javascripts/PIE.htc)
 
-@mixin box-gradient($from, $to)
+@mixin linear-gradient($from, $to)
   background-color: mix($from, $to)
   background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to))
   background-image: -webkit-linear-gradient(top, $from, $to)

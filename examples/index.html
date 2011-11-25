@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Gridpaper</title>
-  <link rel="stylesheet" type="text/css" href="stylesheets/styles.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/index.html.css" />
 </head>
 <body>
 
@@ -90,28 +90,130 @@
       <h4>Forms</h4>
 
       <form id="fake-form" action="#">
+
+
+
         <fieldset>
-          <legend>Contact Us</legend>
-          <div class="field">
-            <label for="contact-name">Name:</label>
-            <input name="contact-name" type="text" placeholder="name" required autofocus>
-          </div>
+          <legend>Legend: Input Boxes</legend>
 
-          <div class="field">
-            <label for="contact-email">Email:</label>
-            <input name="contact-email" type="email" placeholder="email" required>
-          </div>
+          <div class="fields">
+            <div class="field">
+              <label for="text-input">Label: Text Input</label>
+              <input name="text-input" type="text" placeholder="Text Input" />
+            </div>
 
-          <div class="field">
-            <label for="contact-message">Message:</label>
-            <textarea id="contact-message">Type your message here</textarea>
-          </div>
-
-          <div class="field">
-            <input name="login" type="submit" value="Login">
+            <div class="field">
+              <label for="textarea">Label: Textarea</label>
+              <textarea id="textarea">Textarea</textarea>
+            </div>
           </div>
         </fieldset>
+
+        <fieldset>
+          <legend>Legend: Selects</legend>
+          <div class="fields">
+            <div class="field">
+
+              <label for="options">Label: Select</label>
+              <select id="options" name="options">
+                <option value="" selected>Please choose</option>
+                <option value="option-1">Option 1</option>
+                <option value="option-2">Option 2</option>
+                <option value="option-3">Option 3</option>
+                <option value="option-4">Option 4</option>
+                <option value="option-5">Option 5</option>
+                <option value="option-6">Option 6</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="grouped-options">Label: Grouped Select</label>
+              <select name="grouped-options" id="grouped-options">
+                <optgroup label="First Grouping">
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </optgroup>
+
+                <optgroup label="Second Grouping">
+                  <option value="Option 4">Option 4</option>
+                  <option value="Option 5">Option 5</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="field">
+            <label for="grouped-options">Label: Multi-select</label>
+            <select multiple="multiple" size="2">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Legend: Check Boxes &amp; Radio Buttons</legend>
+
+          <div class="fields">
+            <div class="field">
+              <label for="checkbox-1">Label: Checkbox 1</label>
+              <input id="checkbox-1" name="checkbox-1" type="checkbox" />
+            </div>
+
+            <div class="field">
+              <label for="checkbox-2">Label: Checkbox 2</label>
+              <input id="checkbox-2" name="checkbox-2" type="checkbox" />
+            </div>
+
+            <div class="field">
+              <label for="checkbox-3">Label: Checkbox 3</label>
+              <input id="checkbox-3" name="checkbox-3" type="checkbox" />
+            </div>
+
+            <div class="field">
+              <label for="radio-1">Label: Radio 1</label>
+              <input id="radio-1" name="group-1" type="radio" />
+            </div>
+
+            <div class="field">
+              <label for="radio-2">Label: Radio 2</label>
+              <input id="radio-2" name="group-1" type="radio" />
+            </div>
+
+            <div class="field">
+              <label for="radio-3">Label: Radio 3</label>
+              <input id="radio-3" name="group-1" type="radio" />
+            </div>
+
+
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Legend: Buttons</legend>
+
+          <div class="actions">
+
+              <input name="submit" type="submit" value="Submit Input">
+
+              <button>Button</button>
+
+          </div>
+        </fieldset>
+
       </form>
+    </section>
+
+    <section id="effects-example">
+      <h4>Effects</h4>
+
+      <div id="box-shadow" class="effects-box"></div>
+      <div id="border-radius" class="effects-box"></div>
+      <div id="linear-gradient" class="effects-box"></div>
     </section>
 
 

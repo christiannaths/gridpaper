@@ -1,46 +1,46 @@
-.column
-  height: 100px
-  margin-bottom: 16px
-  background-color: $light-grey
-  border: 1px solid $medium-grey
+.grid-column
+  height: 6em
+  margin-bottom: 1em
+  border: none
+    top: 1px solid #E4C1CB
+    right: 1px solid #98CFDE
+  background: $silver url(../images/grid.png)
 
-
-#columns-1
-  .column
-    @include column
-    @include span(24, -2px)
-
-#columns-2
-  .column
+#two-columns
+  .grid-column
     @include column
     @include span(12, -2px)
 
-#columns-3
-  .column
+#three-columns
+  .grid-column
     @include column
     @include span(8, -2px)
 
-#columns-4
-  .column
+#four-columns
+  .grid-column
     @include column
     @include span(6, -2px)
 
-#columns-6
-  .column
+#six-columns
+  .grid-column
     @include column
     @include span(4, -2px)
 
-#columns-8
-  .column
+#eight-columns
+  .grid-column
     @include column
     @include span(3, -2px)
 
-#columns-12
-  .column
-    @include column
-    @include span(2, -2px)
 
-#columns-24
-  .column
-    @include column
-    @include span(1, -2px)
+.text-columns
+  margin-bottom: 1.5em
+  @include showgrid
+
+#two-text-columns
+  @include text-columns(2)
+
+#three-text-columns
+  @include text-columns(3)
+
+#four-text-columns
+  @include text-columns(4)
