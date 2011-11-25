@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency("commander", '>= 4.0.4')
   s.add_dependency("sass", '>=3.1.7')
-  s.add_dependency("guard", '>=0.8.8')
-  s.add_dependency("guard-sass", '>=0.5.4')
   s.add_dependency("colorize", '>= 0.5.8')
+
+  s.add_development_dependency("guard", '>=0.8.8')
 end

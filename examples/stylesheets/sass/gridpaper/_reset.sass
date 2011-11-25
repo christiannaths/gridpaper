@@ -1,0 +1,102 @@
+/*
+  html5doctor.com Reset Stylesheet
+  v1.6.1
+  Last Updated: 2010-09-17
+  Author: Richard Clark - http: //richclarkdesign.com
+  Twitter: @rich_clark
+
+$base-font-size: 16px !default
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  font:
+    size: 100%
+    weight: normal
+    style: normal
+    family: sans-serif
+  vertical-align: baseline
+  background: transparent
+  line-height: 1
+
+body
+  font-size: $base-font-size
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display: block
+
+h1, h2, h3, h4, h5, h6, strong, b
+  font-weight: bold
+
+em, i
+  font-style: italic
+
+nav ul
+  list-style: none
+
+blockquote, q
+  quotes: none
+
+blockquote:before, blockquote:after, q:before, q:after
+  content: ''
+  content: none
+
+ins
+  text-decoration: none
+
+mark
+  font-style: italic
+  font-weight: bold
+
+del
+  text-decoration: line-through
+
+abbr[title], dfn[title]
+  border-bottom: 1px dotted
+  cursor: help
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+hr
+  display: block
+  height: 0px
+  border: 0
+  border-top: 1px solid #cccccc
+  margin: 0
+  padding: 0
+
+input, select
+  vertical-align: middle
+
+textarea
+  margin: 0
+
+h1
+  font-size: 5em
+h2
+  font-size: 4em
+h3
+  font-size: 3em
+h4
+  font-size: 2em
+h5
+  font-size: 1.5em
+h6
+  font-size: 1em
+
+@mixin clearfix
+  display: block
+  &:after
+    display: block
+    overflow: hidden
+    visibility: hidden
+    clear: both
+    height: 0
+    content: "\0020"
+
+.clear
+  @include clearfix

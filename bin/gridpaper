@@ -30,30 +30,19 @@ command :generate do |c|
 end
 
 command :watch do |c|
-  c.syntax = 'gridpaper watch'
+  c.syntax = 'gridpaper watch [input/directory] [output/directory]'
   c.description = 'Watches for changes in your input file and generates CSS to your output file.'
 
-  # c.option '--stylesheets-dir STRING', String, 'Use a different directory to hold your stylesheets'
-
   c.action do |args, options|
-    stylesheets_dir = options.stylesheets_dir || "stylesheets"
-    # working_path = Dir.pwd
+    input_path = args[0] || "stylesheets/sass"
+    output_path = args[1] || "stylesheets"
 
-    input_path = args[0] || ""
-    # input_path = File.expand_path File.join(working_path, input_path)
-    output_path = args[1] || ""
-    # output_path = File.expand_path File.join(working_path, output_path)
-
-    Gridpaper::Watch.new(input_path, output_path)
+    # Pass to sass --watch
+    # TODO:
+    #   - Hook into this and load custom SASS functions
+    system("sass --watch #{ input_path }:#{ output_path }")
   end
 
-end
-
-def check_input_path(working_path)
-  unless File.exists?(File.join(working_path, 'sass')) || File.exists?(File.join(working_path, 'scss'))
-    puts "Could not find a directory named './#{ stylesheets_dir }/sass' or './#{ stylesheets_dir }/scss'. Aborting.".red
-    return false
-  end
 end
 
 alias_command :g, :generate

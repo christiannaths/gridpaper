@@ -1,0 +1,59 @@
+/*
+  Default Gridpaper 24 Column Grid
+  Column Width: 24px
+  Gutter Width: 16px
+  Total Width: 976px
+
+$grid-columns: 24 !default
+$grid-column-width: 24px !default
+$grid-gutter-width: 16px !default
+
+@mixin container
+  width: ($grid-columns * $grid-column-width) + (($grid-columns - 1) * $grid-gutter-width)
+  padding:
+    left: $grid-gutter-width
+    right: $grid-gutter-width
+  margin:
+    left: auto
+    right: auto
+
+@mixin column
+  display: block
+  float: left
+  &:last-child
+    margin-right: 0
+
+@mixin span($n: $grid-columns, $adj: 0)
+  width: ($grid-column-width * $n) + ($grid-gutter-width * ($n - 1)) + $adj
+  margin-right: $grid-gutter-width
+
+@mixin padding($left: inherit, $right: inherit)
+  @if $left != inherit
+    padding-left: ($grid-column-width * $left) + ($grid-gutter-width * $left)
+  @if $right != inherit
+    padding-right: ($grid-column-width * $right) + ($grid-gutter-width * $right)
+
+@mixin margin($left: inherit, $right: inherit)
+  @if $left != inherit
+    margin-left: ($grid-column-width * $left) + ($grid-gutter-width * ($left - 1))
+  @if $right != inherit
+    margin-right: ($grid-column-width * $right) + ($grid-gutter-width * ($right - 1))
+
+@mixin last
+  margin-right: 0
+  clear: right
+
+@mixin text-columns($n, $gutter: $grid-gutter-width)
+  -webkit-column-count: $n
+  -moz-column-count: $n
+  column-count: $n
+  -webkit-column-gap: $gutter
+  -moz-column-gap: $gutter
+  column-gap: $gutter
+
+
+@mixin showgrid
+  background: url(../images/grid.png)
+  border:
+    top: 1px solid fade-out(#dd7d96, 0.7)
+    right: 1px solid fade-out(#7dcadd, 0.3)

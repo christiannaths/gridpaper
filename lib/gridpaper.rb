@@ -2,29 +2,24 @@ require 'rubygems'
 require 'gridpaper/version'
 require 'commander/import'
 require 'fileutils'
-require 'yaml'
 require 'colorize'
-require 'guard'
-# require 'guard-sass'
 
 module Gridpaper
   class Generate
 
     # Add Gridpaper to your project
     def initialize(path, stylesheets_dir="stylesheets", syntax=:sass)
-
-      destination = File.join(path, stylesheets_dir)
-      puts stylesheets_dir.cyan
-      copy_files_to(destination, syntax.to_s)
-
-
+      copy_files_to(
+        File.join(path, stylesheets_dir),
+        syntax.to_s
+      )
     end
 
     private
 
     def copy_files_to(destination, syntax)
       template_dir = File.expand_path(File.join(File.dirname(__FILE__), '../', 'templates', syntax.to_s))
-      template_dir_dest = File.join(destination, syntax)
+      template_dir_dest = File.join(destination, 'sass')
       project_dir = Dir.pwd
 
       if File.exists?(template_dir_dest)
@@ -38,7 +33,7 @@ module Gridpaper
       # templates directory for the specified syntax
       Dir.chdir(File.expand_path(template_dir))
       files = Dir['**/*']
-      puts files
+
       Dir.chdir(project_dir)
 
       files.each do |file|
@@ -61,28 +56,6 @@ module Gridpaper
       puts "#{ status.to_s }: #{ message } (exists)".to_s.yellow if status == :skipped
       puts "#{ status.to_s }: #{ message }".to_s.red if status == :failed
     end
-  end
-
-  class Watch
-
-
-    def initialize(input, output)
-      # working_dir = Dir.pwd
-      @@output_path = output
-      @@input_path = input
-
-      guardfile = File.expand_path(File.join(File.dirname(__FILE__), '/guard/Guardfile'))
-      Guard.start(:guardfile => guardfile, :watchdir => input)
-    end
-
-    def self.output_path
-      return @@output_path
-    end
-
-    def self.input_path
-      return @@input_path
-    end
-
   end
 
 end
